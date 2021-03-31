@@ -38,8 +38,8 @@ def compile(source):
 @app.route('/send_morse', methods = ['GET','POST'])
 def send_morse():
 	str = morse.encode(request.args.get('input'))
-	newstr=str.replace('   ', "delay: 500;").replace('.',"vibe: count 1, level 100, t_on 100; delay: 100;").replace('-',"vibe: count 1, level 100, t_on 500; delay: 100;")
-#	newstr=str.replace('   ', "delay: 500;\n").replace('.',"vibe: count 1, level 100, t_on 100;\ndelay: 100;\n").replace('-',"vibe: count 1, level 100, t_on 500\ndelay: 100;\n");
+	newstr=str.replace('   ', "delay: 500;").replace('.',"vibe: level 100, t_on 100; delay: 100;").replace('-',"vibe: level 100, t_on 500; delay: 100;")
+#	newstr=str.replace('   ', "delay: 500;\n").replace('.',"vibe: level 100, t_on 100;\ndelay: 100;\n").replace('-',"vibe: level 100, t_on 500\ndelay: 100;\n");
 
 	token = request.args.get('token')
 
@@ -58,10 +58,10 @@ def send_morse():
 def hello_world():
 	return "Try navigating to this URL: <a href=\"/send_morse?token=[TOKEN]&input=[TEXT]\">/send_morse?token=[TOKEN]&input=[TEXT]</a>."
 	# str = morse.encode(request.args.get('input'));
-	# newstr=str.replace('   ', "delay: 500\n").replace('.',"vibe: count 1, level 100, t_on 100\ndelay: 100;\n").replace('-',"vibe: count 1, level 100, t_on 500\ndelay: 107;\n");
+	# newstr=str.replace('   ', "delay: 500\n").replace('.',"vibe: level 100, t_on 100\ndelay: 100;\n").replace('-',"vibe: level 100, t_on 500\ndelay: 107;\n");
 
 
-	# x= parser.parse(newstr)#("vibe: count 1, level 100, t_on 100\ndelay: 100;\n");
+	# x= parser.parse(newstr)#("vibe: level 100, t_on 100\ndelay: 100;\n");
 	# #b'\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d\x03\x01\x81t\x03\x02\xf5\x07\x01\x01\x02d\x04\x81t\x03\x01k\x03\x02\xf5\x07\x01\x01\x02d\x04\x81t\x03\x01k\x03\x02\xf5\x07\x01\x01\x02d\x04\x81t\x03\x01k\x03\x01\x81t\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d\x03\x02\xf5\x06\x01\x01\x02d\x04d\x03\x01d'
 	# y=parser.payload(x);
 	# # /pbc.py", line 1200, in generate
@@ -81,5 +81,5 @@ def hello_world():
 
 # for local testing: run as "python app.py"
 if __name__ == '__main__':
-    newstr = '...   ---   ...'.replace('   ', "delay: 500;").replace('.',"beep: count 1, level 100, t_on 100; delay: 100;").replace('-',"beep: count 1, level 100, t_on 500; delay: 100;")
+    newstr = '...   ---   ...'.replace('   ', "delay: 500;").replace('.',"beep: level 100, t_on 100; delay: 100;").replace('-',"beep: level 100, t_on 500; delay: 100;")
     print(repr(compile(newstr)))
