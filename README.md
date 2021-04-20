@@ -2,6 +2,7 @@
  A library to send text and numbers in the form of Pavlok stimuli
 
 
+INSTALLATION
 `python3 -m pip install morse_talk`
 `python3 -m flask run` #defaults to running app.py
 Then, navigate to the server url: /send_morse?token=[TOKEN]&input=[TEXT_TO_SEND_AS_MORE]. 
