@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
 MAINTAINER Maneesh Sethi maneesh@pavlok.com
-FROM python:3.8-slim-buster
 WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN python3 -m pip install -r requirements.txt
