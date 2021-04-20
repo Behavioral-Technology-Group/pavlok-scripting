@@ -111,5 +111,6 @@ def hello_world():
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
+    print(port)
     #newstr = '...   ---   ...'.replace('   ', "delay: 500;").replace('.',"beep: level 100, t_on 100; delay: 100;").replace('-',"beep: level 100, t_on 500; delay: 100;")
     #print(repr(compile(newstr)))
